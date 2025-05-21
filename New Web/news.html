@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+	<link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(-45deg, #6A11CB, #C3B1E1, #808080, #FFFFFF, #87CEEB, #4B0082);
+    background-size: 500% 500%;
+    animation: gradientAnimation 20s ease-in-out infinite;
+}
+
+  @keyframes gradientAnimation {
+     0% { background-position: 0% 50%; }
+     20% { background-position: 25% 75%; }
+     40% { background-position: 50% 50%; }
+     60% { background-position: 75% 25%; }
+     80% { background-position: 100% 50%; }
+     100% { background-position: 0% 50%; }
+      }
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    height: 450px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+	background-color: lavender;
+}
+	
+
+h1 {
+    text-align: center;
+}
+
+.greeting {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.newsletter-text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.email {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.subscribe-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.subscribe-button {
+    background-color: #6c5ce7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    display: inline-block;
+}
+
+.subscribe-button:hover {
+    background-color: #5a4ec7;
+}
+
+.subscribe-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer {
+    font-size: 14px;
+    color: black;
+    padding: 7px;
+    text-align: center;
+    margin-top: 30px; /* Updated margin-top to 30px */
+    font-weight: bold;
+}
+
+/* Additional styles */
+
+.container {
+    background: linear-gradient(to bottom, #fff, #f7f7f7);
+}
+
+.newsletter-text {
+    color: #333;
+}
+
+.email {
+    background: #f2f2f2;
+}
+
+h1 {
+    color: #6c5ce7;
+    text-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #6c5ce7;">Newsletter</h1>
+        <p class="greeting" style="color: black; font-weight: bold;">Hi Dear!</p>
+        <p class="newsletter-text">
+            Join our community to stay updated on the latest news, tips, and exclusive offers! 
+            We're passionate about helping you achieve your goals. 
+            Get ready to unlock exclusive content, discounts, and more!
+        </p>
+        <form>
+            <input type="email" placeholder="Enter your email" class="email" required><br>
+            <div class="subscribe-container">
+                <button class="subscribe-button">
+                    <a href="#" class="subscribe-link">Subscribe</a>
+                </button>
+                <p class="footer">&copy; 2024 Mr Solution Tech. All rights reserved</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

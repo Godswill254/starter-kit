@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+	<link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Us</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #6A11CB, #C3B1E1, #808080, #FFFFFF, #87CEEB, #4B0082);
+            background-size: 500% 500%;
+            animation: gradientAnimation 20s ease-in-out infinite;
+       }
+
+       @keyframes gradientAnimation {
+         0% { background-position: 0% 50%; }
+         20% { background-position: 25% 75%; }
+         40% { background-position: 50% 50%; }
+         60% { background-position: 75% 25%; }
+         80% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+      }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+			margin-top: 60px;
+            min-height: 70vh;
+            background: lavender;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #6c5ce7;
+            margin-bottom: 50px;
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+            font-weight: bold;
+            color: black;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 300px;
+            padding: 10px;
+			outline-color: blue;
+			background: lavender;
+            margin: 3px 0 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 50%;
+            padding: 10px;
+            background-color: #6c5ce7;
+            color: #fff;
+			float: right;
+            border: none;
+            margin-top: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a4ec7;
+        }
+
+        button[disabled] {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+
+        footer {
+            background: #2196F3;
+            text-align: center;
+            padding: 1px;
+            width: 100%;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: purple;
+        }
+		
+		textarea {
+			font-size: 15px;
+			font-weight: 400;
+			outline-color: blue;
+			float: left;
+		}
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Us</h1>
+    <form id="contactForm" action="https://formspree.io/f/xovqelrg" method="POST" onsubmit="submitForm(event)">
+      
+	  <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter Full Name" required>
+     
+	 <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+      
+	  <label for="message-type">Message/Complaint</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write Here..." required></textarea><br>
+ 
+      <button id="submitButton" type="submit">Submit</button>
+    </form>
+  </div>
+  <footer>
+    <p>&copy; 2024 Mr Solution Tech. All rights reserved</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script>
+
+async function submitForm(event) {
+  event.preventDefault();
+  const submitButton = document.getElementById("submitButton");
+  const fileInput = document.querySelector("#file");
+  const form = document.getElementById("contactForm");
+  submitButton.disabled = true;
+  submitButton.textContent = "Submitting... please wait";
+
+  const messageType = document.getElementById("message-type").value;
+  const messageField = document.getElementById("message");
+
+
+  const imageUrlField = document.createElement('input');
+  imageUrlField.name = 'imageUrl';
+  imageUrlField.value = imageUrl;
+  imageUrlField.type = 'hidden';
+  form.appendChild(imageUrlField);
+
+  form.submit();
+}
+
+function resetButton(button) {
+  button.disabled = false;
+  button.textContent = "Submit";
+}
+   </script>
+</body>
+</html>

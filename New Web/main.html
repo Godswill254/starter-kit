@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</body>
+    <meta charset="UTF-8">
+	<!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+	<link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome - Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #6600cc;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+            animation: bounce 3s infinite;
+        }
+
+        .logo-wrapper {
+            position: relative;
+        }
+
+        .logo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        nav ul {
+            list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			font-weight: bold;
+            font-size: 16px;
+			margin-top: 5px;
+			gap: 10px;
+			justify-content: space-around;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+     /* Improved Main Section Styling */
+       .video-container {
+           position: relative;
+           width: 100%;
+           height: 40vh;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           overflow: hidden;
+       }
+
+       .background-video {
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           z-index: -1;
+       }
+
+       .welcome-text {
+           position: relative;
+           font-size: 24px;
+           color: #fff;
+           padding: 15px;
+           background: rgba(0, 0, 0, 0.6);
+           border-radius: 8px;
+           animation: color-change 5s infinite;
+       }
+
+  /* Color Changing Animation */
+       @keyframes color-change {
+           0% { color: #6600cc; }
+           25% { color: #0099ff; }
+           50% { color: #ff9900; }
+           75% { color: #ff66ff; }
+           100% { color: #6600cc; }
+       }
+
+  /* Responsive Adjustments */
+       @media (max-width: 768px) {
+       .video-container {
+            height: 38vh;
+       }
+
+      .welcome-text {
+           font-size: 17px;
+       }
+   }
+
+
+        section {
+           background-color: #333;
+           color: #fff;
+           padding: 25px;
+           text-align: center;
+        }
+
+        section ul {
+           list-style: none;
+           padding: 0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           gap: 12%;
+           flex-wrap: wrap;
+           margin: 20px 0;
+	       font-size: 14px;
+        }
+
+        section li {
+           background-color: blue;
+           padding: 6px 10px;
+           font-size: 1em;
+           border-radius: 6px;
+           transition: 0.3s ease;
+           cursor: pointer;
+        }
+
+        section li:hover {
+            background-color: darkblue;
+			transform: translateY(-3px);
+        }
+
+        section a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+   /* Responsive Styles */
+        @media (max-width: 768px) {
+        section ul {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 11px;
+        }
+
+        section li.usage {
+            width: 100%;
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+
+        @media (min-width: 769px) {
+        section ul {
+            flex-direction: row;
+        }
+
+        section li.usage {
+            margin-top: 0;
+        }
+    }
+
+		footer {
+           background-color: purple;
+           font-size: 14px;
+		   text-align: center;
+	       padding: 10px;
+		}
+
+        /* Loading spinner */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #6600cc;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            header, footer, marquee {
+                font-size: 0.9em;
+            }
+
+            nav a, footer a {
+                font-size: 0.8em;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            marquee {
+                font-size: 18px;
+            }
+
+            button {
+                padding: 6px 12px;
+            }
+        }
+		
+		 /* Sidebar styling */
+        .sidebar {
+            width: 50%;
+            max-width: 300px;
+            height: 100%;
+            background-color: #6c5ce7;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: -100%; /* Hidden by default */
+            transition: left 0.3s ease;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .sidebar.active {
+            left: 0; /* Slide in from the left */
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #4205bf;
+            border-radius: 5px;
+			text-align: center;
+	        transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #5a4ec7;
+        }
+		
+	   .menu-bar {
+            background-color: #6600cc;
+            padding: 3px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-bar .dot-menu {
+            font-size: 28px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Close button */
+        .close-btn {
+             position: absolute;
+             top: 10px;
+             right: 22px;
+             font-size: 19px;
+             color: white;
+             cursor: pointer;
+             margin-top: 25px;
+        }
+	
+        .floating-icons {
+            position: fixed;
+            right: 0; /* Stick to the right edge */
+            top: 65%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px; /* Space between the buttons */
+            pointer-events: none; /* Prevent interference when overlapped */
+       }
+
+       .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 10px; /* Further reduced padding */
+            width: 140px; /* Narrower width for a compact look */
+            border-top-left-radius: 25px; /* Rounded top-left corner */
+            border-bottom-left-radius: 25px; /* Rounded bottom-left corner */
+            border-top-right-radius: 0; /* No rounding on the right side */
+            border-bottom-right-radius: 0; /* No rounding on the right side */
+            background-color: #25D366; /* WhatsApp green for default */
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            font-size: 13px; /* Adjust font size for compactness */
+            font-weight: bold;
+            pointer-events: auto; /* Enable interaction only on the visible part */
+            overflow: hidden; /* Hide the overlapping parts */
+      }
+
+      .button i {
+           font-size: 16px;
+           margin-right: 5px; /* Space between icon and text */
+      }
+
+      .telegram-btn {
+           background-color: #0088CC; /* Telegram blue */
+		   height: 25px;
+      }
+
+      .telegram-btn:hover {
+           background-color: #005685; /* Telegram dark blue */
+      }
+	  
+	  .whatsapp-btn {
+	       height: 25px;
+	  }
+
+      .whatsapp-btn:hover {
+           background-color: #1c6d32; /* WhatsApp dark green */
+      }
+
+      .button:hover {
+          transform: scale(1.05);
+          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+      }
+
+    /* Media Query for Smaller Screens */
+      @media (max-width: 768px) {
+      .button {
+           width: 120px; /* Minimal width for small screens */
+           font-size: 11px; /* Further reduced font size */
+     }
+
+     .button i {
+          font-size: 14px;
+     }
+  }
+
+/* Hiding floating buttons when sidebar is active */
+    .sidebar-open ~ .floating-icons {
+          visibility: hidden; /* Hide floating buttons when sidebar is open */
+          opacity: 0;
+          transition: opacity 0.3s ease;
+     }
+     
+     /* Popup styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: lavender;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 1001;
+            display: none;
+            width: 250px;
+        }
+        
+        .popup-header {
+            font-size: 16px;
+            color: #6600cc;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .popup-message {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .popup-button {
+            background-color: #6c5ce7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+        
+        .popup-button:hover {
+            background-color: #5a4ec7;
+        }
+        
+        .popup-countdown {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+                  
+   </style>
+ </head>
+<body> 
+    <!-- Floating Icons -->
+<div class="floating-icons">
+    <a href="https://t.me/Mr_Solution404" target="_blank" class="button telegram-btn">
+        <i class="fab fa-telegram-plane"></i>
+        <span>Telegram Channel</span>
+    </a>
+    <a href="https://chat.whatsapp.com/LZowbxiPlCiEu8d0AVDO1h" target="_blank" class="button whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp Group</span>
+    </a>
+</div>   
+    <header>
+	    <nav class="menu-bar">
+      <span class="dot-menu" onclick="toggleSidebar()">&#9776;</span>
+  </nav>
+
+  <div class="sidebar" id="sidebar">
+    <span class="close-btn" id="close-btn">X</span>
+    <h3 style="margin-right: 42px;">Mr Solution Tech</h3>
+        <hr><hr><br>
+	<a href="updates.html"><i class="bi bi-bell-fill"></i>
+		Updates</a>
+	<a href="apps.html"><i class="bi bi-google-play"></i>
+		Free Apps</a>
+    <a href="contact.html"><i class="bi bi-headset"></i>
+        Contact Us</a>		
+    <a href="purchase.html"><i class="bi bi-shield-lock"></i>
+		Purchase Key</a>
+	<a href="crypter.html"><i class="bi bi-code-slash"></i>
+		Code Crypter</a>
+	<a href="https://selar.co/showlove/mrsolution"><i class="bi bi-gift"></i>
+		Donate Here</a>
+	<a href="auth.html" id="premium-link"><i class="bi bi-person-check-fill"></i> Premium Member</a>
+  </div>
+
+  <div class="logo-container">
+     <div class="logo-wrapper">
+        <img src="images/mrsolution.jpg" alt="Company Logo" class="logo">
+     </div>
+  </div><br>
+        <nav>
+            <ul>
+                <li><a href="news.html" onclick="showLoader(event)">News</a></li>
+                <li><a href="#" onclick="showLoader(event)">Mail</a></li>
+                <li><a href="about.html" onclick="showLoader(event)">About</a></li>
+                <li><a href="privacy.html" onclick="showLoader(event)">Privacy</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <div class="video-container">
+        <video autoplay muted loop class="background-video">
+            <source src="images/main.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <marquee behavior="scroll" direction="left" class="welcome-text">Welcome to the home of tools, We're 24hrs Active...</marquee>
+    </div>
+</main>
+
+    <section>
+        <ul>
+            <li>
+    <a href="#" onclick="showLoader(event)" id="activate-premium-link"><i class="bi bi-star-fill"></i>
+	Activate Premium</a></li>
+            <li><a href="developer.html" onclick="showLoader(event)"><i class="bi bi-people-fill"></i>
+			Developer Team</a></li> 
+            <li><a href="usage.html" onclick="showLoader(event)"><i class="bi bi-camera-reels-fill"></i>
+		How To Use?</a></li>			
+        </ul>
+    </section>	
+   <footer>
+      <p>&copy; 2024 Mr Solution Tech. All rights reserved</p>
+   </footer>
+		
+    <!-- Loading Spinner -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+    
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-header" id="popup-header"></div>
+        <div class="popup-message" id="popup-message"></div>
+        <div class="popup-countdown" id="popup-countdown"></div>
+        <button class="popup-button" id="popup-button">OK</button>
+    </div>
+    
+   <div id="activate-premium-overlay" class="loading-overlay">
+    <div class="spinner"></div>
+</div>
+  <script>
+  
+     const menuIcon = document.getElementById("menu-icon");
+    const sidebar = document.getElementById("sidebar");
+    const closeBtn = document.getElementById("close-btn");
+
+    // Close the sliding menu
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+    });
+    
+    // Close sidebar on clicking outside
+  document.addEventListener("click", (event) => {
+      const sidebar = document.getElementById("sidebar");
+      const isClickInsideSidebar = sidebar.contains(event.target);
+      const isClickOnMenu = event.target.closest(".dot-menu");
+
+      if (!isClickInsideSidebar && !isClickOnMenu && sidebar.classList.contains("active")) {
+          sidebar.classList.remove("active");
+      }
+  });
+    
+     // Toggle Sidebar visibility
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
+
+    // Sidebar link click event with loading spinner
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent immediate navigation
+
+            // Show loading spinner
+            const loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.style.display = 'flex';
+
+            // Wait for 2 seconds before navigating
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 2000); // 2-second delay before navigating
+        });
+    });
+        
+        document.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById("activate-premium-overlay");
+    const links = document.querySelectorAll("a");
+
+    // Universal link click handler
+links.forEach(link => {
+    link.addEventListener("click", (event) => {
+        const targetUrl = link.href;
+
+        // Check if the link is for Telegram or WhatsApp
+        if (targetUrl.includes("t.me") || targetUrl.includes("https://chat.whatsapp.com/LZowbxiPlCiEu8d0AVDO1h")) {
+            event.preventDefault(); // Prevent default behavior
+            window.open(targetUrl, "_blank"); // Open in a new tab
+            return; // Exit to avoid showing the loader
+        }
+
+        // Skip if no valid URL or if the link is "#"
+        if (!targetUrl || targetUrl === "#") return;
+
+        event.preventDefault(); // Prevent immediate navigation
+
+        // Show loader for 2 seconds before navigation
+        showLoader();
+        setTimeout(() => {
+            hideLoader();
+            window.location.href = targetUrl;
+        }, 2000);
+    });
+});
+
+    // Stop loader on back button
+    window.addEventListener("popstate", () => {
+        hideLoader(); // Stop the loader if it is active
+    });
+
+    // Premium-specific logic
+    const premiumLink = document.getElementById("premium-link");
+    const activatePremiumLink = document.getElementById("activate-premium-link");
+
+  // Check if the user is already activated
+    const activationKey = localStorage.getItem("activationKey");
+    const expirationDate = new Date(localStorage.getItem("activationExpiry"));
+
+    if (activationKey && expirationDate > new Date()) {
+        premiumLink.href = "activated.html";
+    } else {
+        localStorage.removeItem("activationKey");
+        localStorage.removeItem("activationExpiry");
+        premiumLink.href = "auth.html";
+    }
+
+    // Handle "Activate Premium" button click
+    activatePremiumLink.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent immediate navigation
+        const activationExpiry = localStorage.getItem("activationExpiry");
+
+        if (activationExpiry) {
+            const expiryDate = new Date(activationExpiry);
+            const currentDate = new Date();
+
+            if (expiryDate > currentDate) {
+                const daysLeft = Math.ceil((expiryDate - currentDate) / (1000 * 60 * 60 * 24));
+                showLoader();
+
+                setTimeout(() => {
+                    hideLoader();
+                    startCountdown(expiryDate, daysLeft); // Start countdown with popup
+                }, 2000);
+                return;
+            } else {
+                localStorage.removeItem("activationExpiry"); // Remove expired data
+            }
+        }
+
+        // Redirect to authentication page if no valid activation
+        showLoader();
+        setTimeout(() => {
+            hideLoader();
+            window.location.href = "auth.html";
+        }, 2000);
+    });
+});
+
+// Function to show the loader
+function showLoader() {
+    const loader = document.getElementById("activate-premium-overlay");
+    if (loader) loader.style.display = "flex";
+}
+
+// Function to hide the loader
+function hideLoader() {
+    const loader = document.getElementById("activate-premium-overlay");
+    if (loader) loader.style.display = "none";
+}
+
+// Function to start countdown and show popup
+function startCountdown(expiryDate, daysLeft) {
+    const popup = document.getElementById("popup");
+    const popupMessage = document.getElementById("popup-message");
+    const popupHeader = document.getElementById("popup-header");
+    popupHeader.textContent = "Premium Active"; // Set the heading
+
+    const interval = setInterval(() => {
+        const currentDate = new Date();
+        const remainingTime = expiryDate - currentDate;
+
+        if (remainingTime <= 0) {
+            clearInterval(interval); // Stop the timer when time is up
+            popupMessage.textContent = "Your subscription has expired.";
+            return;
+        }
+
+        const hours = String(Math.floor((remainingTime / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+        const minutes = String(Math.floor((remainingTime / (1000 * 60)) % 60)).padStart(2, '0');
+        const seconds = String(Math.floor((remainingTime / 1000) % 60)).padStart(2, '0');
+
+        const timeRemaining = `[${hours}:${minutes}:${seconds}]`;
+
+        // Update popup message with countdown details
+        popupMessage.textContent = `Your subscription is active and will expire on ${expiryDate.toDateString()} (${daysLeft} days remaining). Time left: ${timeRemaining}`;
+    }, 1000);
+
+    popup.style.display = "block";
+
+    // Close popup when the button is clicked
+    document.getElementById("popup-button").addEventListener("click", () => {
+        popup.style.display = "none";
+        clearInterval(interval); // Stop countdown when popup is closed
+    });
+}
+
+// Function to show the popup (for one-time displays)
+function showPopup(header, message) {
+    const popup = document.getElementById("popup");
+    document.getElementById("popup-header").textContent = header;
+    document.getElementById("popup-message").textContent = message;
+    popup.style.display = "block";
+
+    // Close popup when button is clicked
+    document.getElementById("popup-button").addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+ }
+       
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+	<link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UV Code Crypter</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(-45deg, #6A11CB, #C3B1E1, #808080, #FFFFFF, #87CEEB, #4B0082);
+            background-size: 500% 500%;
+            animation: gradientAnimation 20s ease-in-out infinite;
+       }
+
+       @keyframes gradientAnimation {
+         0% { background-position: 0% 50%; }
+         20% { background-position: 25% 75%; }
+         40% { background-position: 50% 50%; }
+         60% { background-position: 75% 25%; }
+         80% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+      }
+        
+		textarea {
+            width: 100%;
+            height: 200px;
+			margin: 10px;
+			border-radius: 3px;
+			margin-bottom: 10px;
+			border: 1px solid #6c5ce7;
+			background-color: lightgray;
+        }
+        button {
+            padding: 10px;
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+			margin: 20px;
+			border-radius: 3px;
+			transition: 0.3s ease;
+        }
+        button:hover {
+            background-color: #6600CC;
+			transform: translateY(-2px);
+        }
+        #output {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+		
+		/* Footer styling */
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #6c5ce7;
+            color: #fff;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="margin: 20px;">UV Code Crypter</h1>
+    <p style="margin: 20px;">Enter uv code below to encrypt or decrypt:</p>
+    <textarea id="htmlCode" placeholder="Enter HTML code here" rows="10" cols="50"></textarea><br><br>
+    
+    <button onclick="encryptCode()">Encrypt</button>
+    <button onclick="decryptCode()">Decrypt</button>
+    
+    <h3>Output:</h3>
+    <pre id="output"></pre>
+    
+    <button id="copyBtn" style="display: none;" onclick="copyToClipboard()">Copy Output</button>
+
+	<div class="footer">
+        &copy; 2024 Mr Solution Tech. All rights reserved
+    </div>
+    <script>
+        // Encrypt HTML code by converting it to Base64
+        function encryptCode() {
+            var inputCode = document.getElementById('htmlCode').value;
+            var encodedCode = btoa(inputCode); // Base64 encoding
+            document.getElementById('output').textContent = encodedCode;
+            document.getElementById('copyBtn').style.display = 'inline-block'; // Show copy button
+        }
+
+        // Decrypt the Base64 encoded code back to original HTML
+        function decryptCode() {
+            var inputEncoded = document.getElementById('htmlCode').value;
+            try {
+                var decodedCode = atob(inputEncoded); // Base64 decoding
+                document.getElementById('output').textContent = decodedCode;
+                document.getElementById('copyBtn').style.display = 'inline-block'; // Show copy button
+            } catch (e) {
+                document.getElementById('output').textContent = "Invalid Base64 string.";
+                document.getElementById('copyBtn').style.display = 'none'; // Hide copy button if invalid
+            }
+        }
+
+        // Copy the output content to the clipboard
+        function copyToClipboard() {
+            var outputText = document.getElementById('output').textContent;
+            navigator.clipboard.writeText(outputText).then(() => {
+                alert('Copied to clipboard!');
+            }).catch(() => {
+                const textArea = document.createElement('textarea');
+                textArea.value = outputText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Copied to clipboard!');
+            });
+        }
+    </script>
+
+</body>
+</html>

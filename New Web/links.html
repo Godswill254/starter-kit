@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+	<link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Solution - Darkweb Links</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #6c5ce7; /* purple */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+header h2 {
+    font-size: 20px;
+    color: #ccc;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#generate-btn {
+    background-color: #333; /* black */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#generate-btn:hover {
+    background-color: #6c5ce7; /* purple */
+}
+
+#loading-section {
+    display: none;
+}
+
+#loading-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #34C759; /* green */
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+#loading-text {
+    font-size: 18px;
+    color: #666;
+}
+
+#key-section {
+    display: none;
+    max-width: 80%;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+}
+
+#activation-key {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.6;
+    color: #333;
+    white-space: pre-wrap; /* Preserves formatting for multi-line text */
+}
+footer {
+    background-color: #6c5ce7; /* purple */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    clear: both;
+}
+
+.tutorial {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tutorial h4 {
+    margin-top: 0;
+}
+
+.tutorial ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mr Solution Tech</h1>
+        <h2>Darkweb Link Generator</h2>
+    </header>
+    <main>
+        <section>
+            <h3>Features:</h3>            
+            <div class="tutorial">
+                <h4>How to generate link:</h4>
+                <ul>
+                    <li>Click the "Generate link" button</li>
+                    <li>Wait for the link to be generated (this may take a few seconds)</li>
+                    <li>Click the "Copy" button to copy the darkweb links to your clipboard</li>
+                    <li>Paste the link anywhere for safe keeping</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <button id="generate-btn">Generate Link</button>
+            <div id="loading-section">
+                <div id="loading-bar"></div>
+                <p id="loading-text"></p>
+            </div>
+            <div id="key-section">
+                <p id="activation-key"></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Mr Solution Tech. All rights reserved.
+    </footer>
+    <script>
+       
+       const generateBtn = document.getElementById('generate-btn');
+const loadingSection = document.getElementById('loading-section');
+const loadingBar = document.getElementById('loading-bar');
+const loadingText = document.getElementById('loading-text');
+const keySection = document.getElementById('key-section');
+const activationKey = document.getElementById('activation-key');
+let keyGenerated = false;
+
+generateBtn.addEventListener('click', () => {
+    if (!keyGenerated) {
+        generateBtn.textContent = 'Generating...';
+        loadingSection.style.display = 'block';
+        let count = 0;
+        const interval = setInterval(() => {
+            count++;
+            loadingText.textContent = `Loading... ${count}%`;
+            loadingBar.style.width = `${count}%`;
+            if (count === 100) {
+                clearInterval(interval);
+                loadingSection.style.display = 'none';
+                keySection.style.display = 'block';
+                activationKey.textContent = generateKey();
+                generateBtn.textContent = 'Copy';
+                keyGenerated = true;
+            }
+        }, 50);
+    } else {
+        navigator.clipboard.writeText(activationKey.textContent).catch(() => {
+            const textArea = document.createElement('textarea');
+            textArea.value = activationKey.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        });
+        generateBtn.textContent = 'Copied';
+        setTimeout(() => {
+            generateBtn.textContent = 'Copy';
+        }, 2000);
+    }
+});
+
+
+function generateKey() {
+    return `• Those asking about sites to get tools to cashout from tutorials posted here, beneath are a few sites I’ve personally tested, tried and verified to do the trick👇🏿👇🏿...
+
+1]•  -{https://Oibaseshop.com  & https://update-tools.com/ For Bank log, shopwithscrip log and Debit Cards}
+
+2]• https://Oibaseshop.com-{ For scannable documents}
+
+3]• https://Oibaseshop.com -{ For SSN Look Ups}
+
+4] https://Oibaseshop.com Shopwithscript and rdp 
+
+5]•  {https://update-tools.com/ For high  credit score fullz and DL Lookups,cc,rdp,dating sites,hacking and loading software }
+
+6]•   https://legionlogsandscriptmarkert.com/-{  For Banklogs with Email Access}
+
+7]• http://darksu.pro -{For Bank log, full info}
+
+8]• http://Bestlogpro.com -{For bank log with email access}`;
+}
+      </script>
+ </body>
+</html>    

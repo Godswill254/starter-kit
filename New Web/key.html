@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+	<link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate - Key</title>
+    <style>
+        body {
+         font-family: Arial, sans-serif;
+         text-align: center;
+         margin: 0;
+         padding: 0;
+         height: 100vh;
+         display: flex;
+         flex-direction: column;
+         background: linear-gradient(-45deg, #6A11CB, #C3B1E1, #808080, #FFFFFF, #87CEEB, #4B0082);
+         background-size: 500% 500%;
+         animation: gradientAnimation 20s ease-in-out infinite;
+       }
+
+       @keyframes gradientAnimation {
+         0% { background-position: 0% 50%; }
+         20% { background-position: 25% 75%; }
+         40% { background-position: 50% 50%; }
+         60% { background-position: 75% 25%; }
+         80% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+      }
+
+header {
+    background-color: #6c5ce7; /* purple */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+header h2 {
+    font-size: 20px;
+    color: #ccc;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+	border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#generate-btn {
+    background-color: #6c5ce7; /* purple */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#generate-btn:hover {
+    background-color: blue; /* blue */
+}
+
+#loading-section {
+    display: none;
+}
+
+#loading-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #34C759; /* green */
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+#loading-text {
+    font-size: 18px;
+    color: #666;
+}
+
+#key-section {
+    display: none;
+}
+
+#activation-key {
+    background-color: #3300CC;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+	padding: 7px;
+	border: 5px outset #C0C0C0;
+	border-radius: 8px;
+}
+
+footer {
+    background-color: #6c5ce7; /* purple */
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    clear: both;
+}
+
+.tutorial {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tutorial h4 {
+    margin-top: 0;
+}
+
+.tutorial ul {
+    list-style: disc;
+    margin-left: 20px;
+	text-align: left;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mr Solution Tech</h1>
+        <h2>Activation Key Generator</h2>
+    </header>
+    <main>
+        <section>
+            <h3 style="color: blue;">Features:</h3>            
+            <div class="tutorial">
+                <h4>How to get an activation key:</h4>
+                <ul>
+                    <li>Click the "Generate Activation Key" button</li>
+                    <li>Wait for the key to be generated (this may take a few seconds)</li>
+                    <li>Click the "Copy" button to copy the activation key to your clipboard</li>
+                    <li>Paste the activation key into the website</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <button id="generate-btn">Generate Activation Key</button>
+            <div id="loading-section">
+                <div id="loading-bar"></div>
+                <p id="loading-text"></p>
+            </div>
+            <div id="key-section">
+                <p id="activation-key"></p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Mr Solution Tech. All rights reserved
+    </footer>
+    <script>
+       
+       const generateBtn = document.getElementById('generate-btn');
+const loadingSection = document.getElementById('loading-section');
+const loadingBar = document.getElementById('loading-bar');
+const loadingText = document.getElementById('loading-text');
+const keySection = document.getElementById('key-section');
+const activationKey = document.getElementById('activation-key');
+let keyGenerated = false;
+
+generateBtn.addEventListener('click', () => {
+    if (!keyGenerated) {
+        generateBtn.textContent = 'Generating... please wait';
+        loadingSection.style.display = 'block';
+        let count = 0;
+        const interval = setInterval(() => {
+            count++;
+            loadingText.textContent = `Loading... ${count}%`;
+            loadingBar.style.width = `${count}%`;
+            if (count === 100) {
+                clearInterval(interval);
+                loadingSection.style.display = 'none';
+                keySection.style.display = 'block';
+                activationKey.textContent = generateKey();
+                generateBtn.textContent = 'Copy!';
+                keyGenerated = true;
+            }
+        }, 50);
+    } else {
+        navigator.clipboard.writeText(activationKey.textContent).catch(() => {
+            const textArea = document.createElement('textarea');
+            textArea.value = activationKey.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+        });
+        generateBtn.textContent = 'Copied!';
+        setTimeout(() => {
+            generateBtn.textContent = 'Copy!';
+        }, 2000);
+    }
+});
+
+function generateKey() {
+    // Replace this with your actual key generation logic
+    return 'A4AM3LO9U5T1XDG4';
+} 
+      </script>
+ </body>
+</html>    

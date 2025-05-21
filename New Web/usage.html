@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <meta charset="UTF-8">
+  <!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+	<link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How To Use</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: black;
+	  background: lavender;
+      }
+	  
+    header {
+      background-color: purple;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    section {
+      margin: 20px 0;
+      padding: 15px;
+      border: 2px solid purple;
+      border-radius: 5px;
+      background: linear-gradient(-45deg, #6A11CB, #C3B1E1, #808080, #FFFFFF, #87CEEB, #4B0082);
+      background-size: 500% 500%;
+      animation: gradientAnimation 20s ease-in-out infinite;
+   }
+
+  @keyframes gradientAnimation {
+     0% { background-position: 0% 50%; }
+     20% { background-position: 25% 75%; }
+     40% { background-position: 50% 50%; }
+     60% { background-position: 75% 25%; }
+     80% { background-position: 100% 50%; }
+     100% { background-position: 0% 50%; }
+      }
+	
+    h3 {
+      color: purple;
+    }
+    .video-container {
+      position: relative;
+      width: 100%; /* Make the container take full width */
+      padding-bottom: 40.25%; /* 16:9 Aspect Ratio */
+      height: 0; /* Set height to 0 to use padding for aspect ratio */
+      overflow: hidden; /* Hide any overflow */
+      margin-top: 10px;
+    }
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      object-fit: cover; /* Ensure video covers the container area */
+    }
+    footer {
+      background-color: #d8a5e8; /* Friendly Purple */
+      color: black;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    .notice {
+      margin: 18px;
+      padding: 10px;
+      border: 1px solid red;
+      border-radius: 5px;
+      background-color: #ffe6e6;
+      color: red;
+      font-weight: bold;
+    }
+    /* Media query for desktop devices */
+    @media only screen and (min-width: 768px) {
+      .video-container {
+        width: 70%; /* Set width to 70% for desktop devices */
+        margin: 0 auto; /* Center the video container */
+      }
+    }
+    /* Media query for mobile devices */
+    @media only screen and (max-width: 765px) {
+      .video-container {
+        width: 90%; /* Set width to 100% for mobile devices */
+      }
+    }
+
+       .watch-btn {
+		    font-family: Arial, sans-serif;
+            background-color: #4205bf; /* Deep Purple background */
+            display: ;
+			justify-content: flex-end;
+			color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 12px;
+			background-color: #0088CC; /* Telegram blue */
+            cursor: pointer;
+            border-radius: 10px;
+			transition: 0.3s;
+			font-weight: 400;
+			position: absolute;
+			text-decoration: none;
+			animation: pulse 2s infinite;
+        }
+		
+		@keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .watch-btn:hover {
+            background-color: #005685; /* Telegram dark blue */
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>How To Use The Website!</h2>
+  </header>
+  <div class="notice">
+    <p>Note: We won't explain to you again on how to use the website, kindly take your time to watch these videos carefully!</p>
+  </div>
+  <main>
+    <section id="usage">
+      <h3>How To Navigate The Website Smoothly</h3>
+      <div class="video-container">
+        <video controls>
+          <source src="images/tut.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+		<a href="https://t.me/Mr_Solution404/37" target="_blank" class="watch-btn"><i class="fab fa-telegram-plane"></i>
+	   Watch Full Video</a>
+      </div>
+    </section>
+    <section id="download">
+      <h3>How To Download Free Apps On The Site</h3>
+      <div class="video-container">
+        <video controls>
+          <source src="images/tut1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+		<a href="https://t.me/Mr_Solution404/41" target="_blank" class="watch-btn"><i class="fab fa-telegram-plane"></i>
+	   Watch Full Video</a>
+      </div>
+    </section>
+    <section id="protect">
+      <h3>4 Ways To Protect Yourself Online</h3>
+      <div class="video-container">
+        <video controls>
+          <source src="images/#.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+		<a href="#" target="_blank" class="watch-btn"><i class="fab fa-telegram-plane"></i>
+	   Watch Full Video</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p> 2024 Mr Solution Tech. All rights reserved</p>
+  </footer>
+</body>
+</html>

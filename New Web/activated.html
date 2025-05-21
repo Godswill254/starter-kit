@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+	<link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium | Successfully Activated</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5a4ec7;
+        }
+        
+        .welcome-container {
+            max-width: 600px;
+            margin: 12px auto;
+            padding: 20px;
+			border-radius: 5px;
+            background-color: #fff;
+            border: 1px solid #8c7ae6;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #8c7ae6; /* Purple background */
+        }
+        
+        .welcome-message {
+            padding: 20px;
+            color: #fff; /* White text */
+        }
+        
+        .welcome-message p {
+            margin-bottom: 20px;
+        }
+        
+        .welcome-message h2 {
+            margin-top: 20px;
+            color: #212121; /* Black text */
+        }
+        
+        .welcome-message ul {
+            list-style: disc;
+            margin-left: 20px;
+            padding: 10px;
+        }
+        
+        .welcome-message li {
+            margin-bottom: 10px;
+        }
+        
+        .get-started-btn {
+		    font-family: Arial, sans-serif;
+            background-color: #4205bf; /* Deep Purple background */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+			transition: 0.3s ease;
+			animation: pulse 2s infinite;
+        }
+		
+		@keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .get-started-btn:hover {
+            background-color: #5a4ec7;
+        }
+        
+        /* Loader styling */
+        .loader {
+            display: none;
+			text-align: center;
+			justify-content: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #4205bf;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 11px;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #555;
+            background-color: #4205bf;
+            color: #fff;
+        }
+
+        /* Notice styling */
+        .notice {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border: 1px solid #ffeeba;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+           background-color: blue; /* Blue */
+           color: white;
+           border: none;
+           padding: 10px 20px;
+           font-size: 16px;
+           border-radius: 8px; /* Added border radius */
+           cursor: pointer;
+           transition: background-color 0.3s ease;
+		   transition: 0.3s ease;
+      }
+
+      button:hover {
+           background-color: #6a1b9a; /* Purple */
+		   transform: translateY(-3px);
+      }
+
+      button:disabled {
+           background-color: #333; /* Darker color when loading */
+           cursor: not-allowed;
+      }
+        
+   </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1 style="color: #fff;">Welcome to Premium!</h1>
+        <div class="welcome-message">
+            <p>Dear valued subscriber,</p>
+            <p>A warm welcome to our premium community! We're thrilled to have you on board. By upgrading to our premium version, you've unlocked a world of exclusive benefits that will take your experience to the next level.</p>
+            <h2>Unlock Exclusive Benefits:</h2>
+            <ul>
+                <li>All Premium Apps: Enjoy unrestricted access to our entire suite of premium apps.</li>
+                <li>Ad-Free Experience: Browse our website without interruptions.</li>
+                <li>Priority Support: Receive prompt and personalized assistance.</li>
+            </ul>
+            <p>Thank you for choosing our platform. We appreciate your trust and look forward to helping you achieve your goals.</p>
+            <button class="get-started-btn" onclick="showLoader()">Get Started</button>
+        </div>
+
+        <!-- Notice for request of tool -->
+        <div class="notice">
+            <p>Note: The payment process is now automated, allowing you to receive your tool immediately upon payment. We will continue to add more tools, and if there's a specific tool you need that isn't available, you can easily request for tool</p>
+            <div class="action">
+        <button id="contact-btn">Request for tool?</button>
+      </div>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mr Solution Tech. All rights reserved</p>
+    </footer>
+
+    <script>
+        function showLoader() {
+            // Show the loader
+            document.getElementById("loader").style.display = "block";
+            
+            // Hide the button
+            document.querySelector(".get-started-btn").style.display = "none";
+
+            // Set a timeout to redirect after 5 seconds
+            setTimeout(function() {
+                window.location.href = 'premium.html';
+            }, 3000);
+        }
+		
+		// Stop loader on back button
+    window.addEventListener("popstate", () => {
+        hideLoader(); // Stop the loader if it is active
+    });
+		
+		document.getElementById('contact-btn').addEventListener('click', function () {
+      const button = this;
+      button.disabled = true;
+      button.textContent = 'Loading... please wait';
+
+      setTimeout(() => {
+        window.location.href = 'contact.html'; // Replace with actual purchase link
+      }, 3000);
+    });
+    </script>
+</body>
+</html>

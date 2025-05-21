@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+	<link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activate - Premium</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Existing styles remain the same */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(-45deg, #6A11CB, #C3B1E1, #808080, #FFFFFF, #87CEEB, #4B0082);
+            background-size: 500% 500%;
+            animation: gradientAnimation 15s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+		
+     /* Animated Gradient Background */
+         @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            20% { background-position: 25% 75%; }
+            40% { background-position: 50% 50%; }
+            60% { background-position: 75% 25%; }
+            80% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 300px;
+            padding: 50px;
+            background-color: lightgray;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 9px;
+            text-align: center;
+        }
+
+        h1 {
+            color: purple;
+            animation: blink 3s infinite;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+		
+		@keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #login-form {
+            margin-top: 20px;
+        }
+
+        #master-password {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+			outline-color: purple;
+		}
+		    
+        #login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6c5ce7;
+            color: #fff;
+            border: none;
+            text-alignv center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #login-button:hover {
+            background-color: #6600CC;
+        }
+
+        /* Footer styling */
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #6c5ce7;
+            color: #fff;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Loading overlay */
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Popup styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 1001;
+            display: none;
+            width: 250px;
+        }
+        
+        .popup-header {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .popup-message {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .popup-button {
+            background-color: #6c5ce7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+        
+        .popup-button:hover {
+            background-color: #5a4ec7;
+        }
+        
+        .popup-countdown {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+		
+	    h5 a {
+		    color: purple;
+			font-weight: bold;
+			letter-spacing: 1px;
+		    text-decoration: none;
+			animation: blink 0.5s infinite;
+	    }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }		
+		
+	    h5 a:hover {
+		    color: blue;
+		    text-decoration: underline;
+	   	}
+		
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Unlock Premium</h1>
+        <form id="login-form">
+            <input style="width: 90%;" type="password" id="master-password" placeholder="Enter Activation Key" required maxlength="16">
+            <button id="login-button">Submit
+			<i class="bi bi-box-arrow-in-right"></i></button>
+        </form><br><br>
+        <h5>Purchase Activation Key <a href="purchase.html">Here!</a></h5>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2024 Mr Solution Tech. All rights reserved
+    </div>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-header" id="popup-header"></div>
+        <div class="popup-message" id="popup-message"></div>
+        <div class="popup-countdown" id="popup-countdown"></div>
+        <button class="popup-button" id="popup-button">OK</button>
+    </div>
+    
+    <script>
+    const masterPasswordInput = document.getElementById("master-password");
+    const masterPassword = "A4AM3LO9U5T1XDG4";
+    const loginButton = document.getElementById("login-button");
+    const loadingOverlay = document.getElementById("loading-overlay");
+    const popup = document.getElementById("popup");
+    const popupHeader = document.getElementById("popup-header");
+    const popupMessage = document.getElementById("popup-message");
+    const popupCountdown = document.getElementById("popup-countdown");
+    const popupButton = document.getElementById("popup-button");
+
+    const USED_KEY_STORAGE = "usedKey";
+    const EXPIRY_DAYS = 40;
+
+    function saveUsedKey(key) {
+        const now = new Date();
+        now.setDate(now.getDate() + EXPIRY_DAYS);
+        localStorage.setItem(USED_KEY_STORAGE, JSON.stringify({ key, expiry: now.toISOString() }));
+    }
+
+    function isKeyUsed(key) {
+        const usedKeyData = localStorage.getItem(USED_KEY_STORAGE);
+        if (!usedKeyData) return false;
+
+        const { key: storedKey, expiry } = JSON.parse(usedKeyData);
+        if (new Date() > new Date(expiry)) {
+            localStorage.removeItem(USED_KEY_STORAGE);
+            return false;
+        }
+
+        return storedKey === key;
+    }
+
+    loginButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        const userInput = masterPasswordInput.value.trim();
+
+        if (!userInput) {
+            // Show input validation popup without loader
+            popupHeader.textContent = "Input Required!";
+            popupMessage.textContent = "Please enter your activation key.";
+            popupCountdown.textContent = "";
+            popup.style.display = "block";
+
+            popupButton.onclick = () => {
+                popup.style.display = "none";
+            };
+            return;
+        }
+
+        loadingOverlay.style.display = "flex";
+        loginButton.disabled = true;
+
+        setTimeout(() => {
+            loadingOverlay.style.display = "none";
+
+            if (userInput === masterPassword) {
+                if (isKeyUsed(userInput)) {
+                    // Key already used and expired
+                    popupHeader.textContent = "Activation Expired";
+                    popupMessage.textContent = "Your subscription has expired kindly renew it immediately.";
+                    popupCountdown.textContent = "";
+                    popup.style.display = "block";
+
+                    popupButton.onclick = () => {
+                        popup.style.display = "none";
+                        loginButton.disabled = false;
+                    };
+                    return;
+                }
+
+                // Save activation details in localStorage
+                const expiryDate = new Date();
+                expiryDate.setDate(expiryDate.getDate() + 30); // 30 days from now
+                localStorage.setItem("activationKey", userInput);
+                localStorage.setItem("activationExpiry", expiryDate.toISOString());
+                saveUsedKey(userInput);
+
+                // Show success popup
+                popupHeader.textContent = "Activation Successful!";
+                popupMessage.textContent = "You have successfully activated your premium account.";
+                popupCountdown.textContent = "Redirecting in 10 seconds...";
+                popup.style.display = "block";
+
+                let countdown = 10;
+                const interval = setInterval(() => {
+                    popupCountdown.textContent = `Redirecting in ${countdown} seconds...`;
+                    countdown--;
+                    if (countdown < 0) {
+                        clearInterval(interval);
+                        popup.style.display = "none";
+                        window.location.href = "activated.html";
+                    }
+                }, 1000);
+            } else {
+                // Show failure popup
+                popupHeader.textContent = "Activation Failed!";
+                popupMessage.textContent = "Invalid activation key. Please try again.";
+                popupCountdown.textContent = "";
+                popup.style.display = "block";
+
+                popupButton.onclick = () => {
+                    popup.style.display = "none";
+                    loginButton.disabled = false;
+                };
+            }
+        }, 3000);
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const activationKeyStorageKey = "activationKey";
+        const activationExpiryStorageKey = "activationExpiry";
+
+        const activatePremiumLink = document.getElementById("activate-premium-link");
+        const premiumLink = document.getElementById("premium-link");
+
+        activatePremiumLink.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const currentKey = localStorage.getItem(activationKeyStorageKey);
+            const activationExpiry = localStorage.getItem(activationExpiryStorageKey);
+            const currentDate = new Date();
+
+            if (!activationExpiry || !currentKey) {
+                // No key entered
+                showPopup(
+                    "Input Required",
+                    "Please enter an activation key to continue."
+                );
+                return;
+            }
+
+            const expiryDate = new Date(activationExpiry);
+
+            if (expiryDate > currentDate) {
+                // Subscription is active
+                const daysLeft = Math.ceil((expiryDate - currentDate) / (1000 * 60 * 60 * 24));
+                showPopup(
+                    "Premium Active",
+                    `Your subscription is active and will expire on ${expiryDate.toDateString()} (${daysLeft} days remaining).`
+                );
+                return;
+            } else {
+                // Subscription expired
+                if (currentKey) {
+                    showPopup(
+                        "Activation Expired",
+                        "Your subscription has expired kindly renew it immediately."
+                    );
+                    return;
+                }
+            }
+
+            const newKey = prompt("Enter your new activation key:");
+
+            if (newKey) {
+                if (newKey.trim() === "") {
+                    showPopup(
+                        "Input Required",
+                        "Activation key cannot be empty. Please enter a valid key."
+                    );
+                    return;
+                }
+
+                if (newKey !== currentKey) {
+                    // New key provided
+                    const newExpiryDate = new Date();
+                    newExpiryDate.setDate(newExpiryDate.getDate() + 30); // Set expiration to 30 days from now
+                    localStorage.setItem(activationKeyStorageKey, newKey);
+                    localStorage.setItem(activationExpiryStorageKey, newExpiryDate.toISOString());
+                    showPopup(
+                        "Premium Activated",
+                        `Your subscription has been activated and will expire on ${newExpiryDate.toDateString()}.`
+                    );
+                } else {
+                    // Same key used
+                    showPopup(
+                        "Activation Expired",
+                        "Your subscription has expired kindly renew it immediately."
+                    );
+                }
+            }
+        });
+
+        // Redirect user to activated page if key is active
+        const activationKey = localStorage.getItem(activationKeyStorageKey);
+        const expirationDate = new Date(localStorage.getItem(activationExpiryStorageKey));
+
+        if (activationKey && expirationDate > new Date()) {
+            premiumLink.href = "activated.html";
+        } else {
+            localStorage.removeItem(activationKeyStorageKey);
+            localStorage.removeItem(activationExpiryStorageKey);
+            premiumLink.href = "auth.html";
+        }
+    });
+
+    // Function to show a popup message
+    function showPopup(header, message) {
+        const popup = document.getElementById("popup");
+        document.getElementById("popup-header").textContent = header;
+        document.getElementById("popup-message").textContent = message;
+        popup.style.display = "block";
+
+        // Close popup when button is clicked
+        document.getElementById("popup-button").addEventListener("click", () => {
+            popup.style.display = "none";
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Title and Description -->    
+    <title>Mr Solution - Innovative Tech Solutions and Expert Insights</title>
+	<link rel="canonical" href="http://mrsolution.com.ng/"/>
+    <meta name="description" content="Discover innovative solutions, expert insights, tools, latest technology news, and resources at Mr Solution Tech to stay ahead in the modern tech world.">
+	
+
+  <!-- Open Graph Title -->
+    <meta property="og:title" content="Mr Solution - Innovative Tech Solutions, Tools, and Insights for Modern Technology Success">
+    <meta property="og:description" content="Explore Mr Solution Tech for innovative solutions, tools, expert insights, and tech news. Stay ahead in the world of technology with our resources.">
+    <meta property="og:image" content="http://mrsolution.com.ng/images/mrsolution.jpeg">
+    <meta property="og:image:alt" content="Mr Solution Tech Logo">
+    <meta property="og:url" content="http://mrsolution.com.ng/">
+    <meta property="og:type" content="website">
+	
+  <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mr Solution - Innovative Tech Solutions, Insights, Tools, and News for Modern Technology">
+    <meta name="twitter:description" content="Discover tools, news, innovative solutions, and expert insights at Mr Solution Tech. Stay ahead in the technology world.">
+    <meta name="twitter:image" content="http://mrsolution.com.ng/images/mrsolution.jpeg">
+
+	
+ <!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+	<link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+	
+ <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    <meta name="revised" content="Mr_Solution_Tech, 18/11,2024">
+    <meta http-equiv="refresh" content="">
+ <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Mr Solution Tech",
+  "url": "https://www.mrsolution.com.ng",
+  "logo": "https://www.mrsolution.com.ng/images/mrsolution.jpeg",
+  "description": "Mr Solution Tech provides free premium tools, tech updates, and expert resources for digital success.",
+  "sameAs": [
+    "https://www.facebook.com/",
+    "https://twitter.com/",
+    "https://www.instagram.com/"
+  ]
+}
+</script>
+
+
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      line-height: 1.0;
+	  background: url('images/bg1.png');
+	  background-size: cover;
+	  background-position: center;
+	  background-repeat: no-repeat;
+    }
+	
+    header {
+      background: #0a0f2c;
+      color: white;
+      text-align: center;
+      padding: 60px 10px;
+    }
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+		
+	 .logo-container img {
+	      display: flex;
+          align-items: left;
+		  justify-content: left;
+          top: 5px;		  
+	 }
+	 
+	 .logo-container a {
+	     float: right;
+		 top: 5px; 
+	 }
+
+
+     .logo {
+         width: 100px;
+         height: 80px;
+       }
+	
+	/* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+        }
+    header p {
+      font-size: 1.2rem;
+    }
+
+    
+	/* Sections */
+    section {
+      padding: 30px 15px;
+      text-align: center;
+    }
+	
+    .container {
+       max-width: 700px;
+       margin: 0 auto;
+       background: white;
+       border-radius: 15px;
+       box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+       padding: 60px 15px;
+       margin-bottom: 15px;
+       background: linear-gradient(-45deg, #6A11CB, #C3B1E1, #808080, #FFFFFF, #87CEEB, #4B0082);
+       background-size: 500% 500%;
+       animation: gradientAnimation 20s ease-in-out infinite;
+      
+	  }
+
+       @keyframes gradientAnimation {
+         0% { background-position: 0% 50%; }
+         20% { background-position: 25% 75%; }
+         40% { background-position: 50% 50%; }
+         60% { background-position: 75% 25%; }
+         80% { background-position: 100% 50%; }
+         100% { background-position: 0% 50%; }
+      }
+	
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #0a0f2c;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #555;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #007bff;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0056b3;
+	  text-decoration: none;
+    }
+	
+	.button {
+	  position: relative;
+      padding: 12px 25px;
+      background: #007bff;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s ease-in-out;
+    }
+	
+    .button:hover {
+      background: #0056b3;
+	  text-decoration: none;
+	  transform: scale(1.05);
+    }
+
+    /* Counter Section */
+    .counters {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background: #0a0f2c;
+      color: white;
+      padding: 60px 20px;
+    }
+    
+    .counter-item {
+      margin: 20px;
+      text-align: center;
+    }
+    
+    .counter-item h3 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    
+    .counter-item p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    
+    .counter-item i {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #00d4ff;
+      align-items: center;
+    }
+    
+    .quick-links {
+      width: 100%;
+	  background:  transparent;
+      color: white;
+      padding: 40px 15px;
+      margin-bottom: 5px;
+    }
+    
+    ul {
+        text-decoration: none;
+        text-decoration-style: none;
+        margin: 10px;
+    }
+    
+    a {
+        color: red;
+        text-decoration: none;
+        float: left;
+		margin-left: 10px;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+        color: whitesmoke
+    }
+	
+	.cool-link::after {
+	    content: '';
+		display: flex;
+		width: 0;
+		height: 2px;
+		background: white;
+		transition: width .3s;
+	}
+	
+	cool-link:hover::after {
+	    width: 100%;
+		transition: width .3s;
+	}
+    
+    h3 {
+        text-align: left;
+		margin-left: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 1.0rem;
+      background: #0a0f2c;
+      color: white;
+    }
+	
+	#preloader {
+	   background: gray url('images/loader2.gif') no-repeat center center;
+	   background-size: 15%;
+	   display:flex; 
+	   align-items:center; 
+	   justify-content:center;
+	   height: 100%;
+	   width: 100%;
+	   position: fixed;
+	   z-index: 9999;
+	}
+	
+  </style>
+</head>
+
+<body>
+
+   <div id="preloader"></div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo-container">
+	<a href="#" class="button" id="sign-in" data-aos="fade-down-right" data-aos-duration="10000">Sign in
+	 <i class="bi bi-box-arrow-right"></i></a>
+     <a href="#" class="button" id="sign-up" data-aos="fade-down-right" data-aos-duration="10000">Sign up
+	 <i class="bi bi-person-plus-fill"></i></a>
+     
+	 <div class="logo-wrapper">
+        <img src="images/mrsolution.jpeg" alt="Company Logo" class="logo">
+     </div>
+  </div>
+     
+    <p data-aos="fade-down">Explore our tools, ideas, and solutions to find innovative answers to your challenges!</p>
+  </header>
+
+  <!-- About Section -->
+  <section>
+    <div class="container" data-aos="fade-up" id="about">
+      <h2>Why Choose Us?</h2>
+      <p>We provide fast, secure, and reliable tools designed to help you scale your digital world efficiently.</p>
+      <a href="about.html" class="btn">Read More...</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section>
+    <div class="container" data-aos="fade-right">
+      <h2>Our Services</h2>
+      <p>Explore a wide range of technical solutions crafted for professionals, businesses, and students alike.</p>
+      <a href="about.html" class="btn">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- Counters Section -->
+  <section class="counters" data-aos="fade-up">
+    <div class="counter-item">
+      <i style="margin-right: 55px;" class="fas fa-users"></i>                
+      <h3 id="customers">0</h3>
+      <p>Satisfied Customers</p>
+    </div>
+    <div class="counter-item">
+      <i style="margin-right: 55px;" class="fas fa-check-circle"></i>
+      <h3 id="projects">0</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div class="counter-item">
+      <i class="fas fa-tools"></i>
+      <h3>Unlimited</h3>
+      <p>Tools Available</p>
+    </div>
+  </section>
+
+
+  <!-- Premium Section -->
+  <section>
+    <div class="container" data-aos="fade-left">
+      <h2>Premium Plan</h2>
+<p>Unlock the full power of our platform with Premium! Gain access to exclusive tools, latest updates,
+
+<ul style="list-style: none; margin-left: 5px;">
+  <li style="margin-bottom: 8px;">✔️ Priority customer support</li>
+  <li style="margin-bottom: 8px;">✔️ Full access to premium tools</li>
+  <li style="margin-bottom: 8px;">✔️ Early access to new updates</li>
+  <li style="margin-bottom: 8px;">✔️ Exclusive content and resources</li>
+  <li style="margin-bottom: 8px;">✔️ Valid for 30 days only</li>
+</ul><br>
+
+<p><strong>Price:</strong> $1.99 (₦2,000)</p>
+     <a href="#" class="btn" id="activate-premium-link"> Join Premium</a>
+    </div>
+  </section>
+  
+  <!-- Support Section -->
+  <section>
+    <div class="container" data-aos="fade-up-right" id="contact">
+      <h2>24/7 Support</h2>
+      <p>Our dedicated support team is always ready to assist you at any time, any day, without delay.</p>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
+  </section>
+  
+  <!-- Quick Links -->
+  <section>
+    <div class="quick-links">
+     <h3>Quick Links -></h3><br>
+   <ul data-aos="fade-up-right">
+      <li><a href="#sign-in" class="cool-link">Sign In</a></li><br>
+      <li><a href="#sign-up" class="cool-link">Sign Up</a></li><br>
+      <li><a href="#about" class="cool-link">About Us</a></li><br>
+      <li><a href="#contact" class="cool-link">Contact Us</a></li><br>
+      <li><a href="privacy.html" class="cool-link">Terms/Privacy</a></li><br>
+      <li><a href="auth.html" id="premium-link" class="cool-link">Premium Member</a>
+   </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Mr Solution Tools. All rights reserved.
+  </footer>
+
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Counter Animation Script -->
+  <script>
+    AOS.init({
+    duration: 1200,
+    once: true
+  });
+
+  function animateCounter(id, start, end, duration) {
+    let obj = document.getElementById(id),
+        current = start,
+        range = end - start,
+        increment = end > start ? 1 : -1,
+        stepTime = Math.abs(Math.floor(duration / range)),
+        timer = setInterval(function() {
+          current += increment;
+          obj.textContent = current.toLocaleString(); // format with commas
+          if (current == end) {
+            clearInterval(timer);
+          }
+        }, stepTime);
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    animateCounter("customers", 0, 2000, 2500);  // 2,000 customers
+    animateCounter("projects", 0, 1300, 1000);     // 1,300 projects
+    // No animation needed for Unlimited tools
+  });
+  
+  
+  // Premium-specific logic
+    const premiumLink = document.getElementById("premium-link");
+    const activatePremiumLink = document.getElementById("activate-premium-link");
+
+  // Check if the user is already activated
+    const activationKey = localStorage.getItem("activationKey");
+    const expirationDate = new Date(localStorage.getItem("activationExpiry"));
+
+    if (activationKey && expirationDate > new Date()) {
+        premiumLink.href = "activated.html";
+    } else {
+        localStorage.removeItem("activationKey");
+        localStorage.removeItem("activationExpiry");
+        premiumLink.href = "auth.html";
+    }
+
+  </script>
+  
+  
+  <script>
+  // Hide the main page initially
+  document.documentElement.style.overflow = 'hidden';
+
+  // Wait for 3 seconds after load, then hide preloader
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      var loader = document.getElementById("preloader");
+      loader.style.display = "none";
+      document.documentElement.style.overflow = 'auto'; // Enable scroll
+    }, 3000); // 3000ms = 3 seconds
+  });
+</script>
+
+</body>
+</html>

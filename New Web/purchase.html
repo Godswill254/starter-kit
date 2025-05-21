@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Author and Icon -->
+    <meta name="author" content="Mr Solution">
+  <link rel="icon" href="images/mrsolution.jpeg">
+    <link rel="icon" href="http://mrsolution.com.ng/images/mrsolution.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase Activation Key</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #6A11CB, #C3B1E1, #808080, #FFFFFF, #87CEEB, #4B0082);
+      background-size: 500% 500%;
+      animation: gradientAnimation 20s ease-in-out infinite;
+}
+
+  @keyframes gradientAnimation {
+     0% { background-position: 0% 50%; }
+     20% { background-position: 25% 75%; }
+     40% { background-position: 50% 50%; }
+     60% { background-position: 75% 25%; }
+     80% { background-position: 100% 50%; }
+     100% { background-position: 0% 50%; }
+      }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: lavender;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      flex: 1;
+    }
+
+    header h1 {
+      font-size: 24px;
+      color: #6a1b9a; /* Purple */
+    }
+
+    header p {
+      font-size: 16px;
+    }
+
+    .benefits h2 {
+      font-size: 20px;
+      color: #1e88e5; /* Blue */
+      margin-bottom: 10px;
+    }
+
+    .benefits p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .price {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #d32f2f; /* Red for emphasis */
+    }
+
+    .notice {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #333;
+      background-color: #cccccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .action {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #1e88e5; /* Blue */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px; /* Added border radius */
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #6a1b9a; /* Purple */
+    }
+
+    button:disabled {
+      background-color: #333; /* Darker color when loading */
+      cursor: not-allowed;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px 0; /* Increased padding */
+      background-color: #6a1b9a; /* Nice purple color */
+      color: #fff; /* White */
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Ensures footer stays at the bottom */
+    body > footer {
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Unlock Premium Membership</h1>
+      <p>Experience the best of our services with a Premium Membership.</p>
+    </header>
+
+    <main>
+      <section class="benefits">
+        <h2>Benefits of Premium Membership</h2>
+       <p>✓ Enjoy an ad-free experience.</p>
+        <p>✓ Priority support from our team.</p>        
+        <p>✓ Get early access to exclusive content and features.</p>
+        <p>✓ Receive your activation key immediately after payment is completed.</p>
+        <p>✓ Once your account is activated, you will be automatically verified as a premium user.</p>
+      </section>
+
+      <div class="price">
+        Price: ₦1,500 ($1.05)
+      </div>
+
+      <section class="notice">
+  <p>Note: The activation key is valid for 30 days. After this period, renewal is required to maintain Premium Membership benefits.</p>
+  <p>Important: Automatic activation is temporarily unavailable, you can access the premium using manual activation. We’re working to automate this process soon.</p>
+</section>
+
+      <div class="action">
+        <button id="purchaseBtn">Purchase Activation Key</button>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Mr Solution Tech. All rights reserved</p>
+  </footer>
+
+  <script>
+    document.getElementById('purchaseBtn').addEventListener('click', function () {
+      const button = this;
+      button.disabled = true;
+      button.textContent = 'Redirecting... please wait';
+
+      setTimeout(() => {
+        window.location.href = 'https://selar.co/5n3184'; // Replace with actual purchase link
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
