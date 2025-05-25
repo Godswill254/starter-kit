@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title">Mr Solution - Revolutionary Tech Solutions & AI-Powered Insights | 2025</title>
+  <meta name="description" content="Experience the future of technology with Mr Solution. Advanced AI tools, real-time analytics, and revolutionary solutions for businesses in 2025.">
+  <meta name="keywords" content="AI solutions, cloud infrastructure, cybersecurity, custom development, business intelligence, digital transformation, Mr Solution">
+  <meta name="author" content="Mr Solution">
+  <meta property="og:title" content="Mr Solution - Revolutionary Tech Solutions">
+  <meta property="og:description" content="Leading-edge technology solutions powered by AI and innovation for businesses in 2025.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mrsolution.com">
+  <meta property="og:image" content="https://mrsolution.com/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mrsolution">
+  <meta name="twitter:title" content="Mr Solution - Revolutionary Tech Solutions">
+  <meta name="twitter:description" content="Leading-edge technology solutions powered by AI and innovation.">
+  <meta name="twitter:image" content="https://mrsolution.com/og-image.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js" defer></script>
+  <script src="main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Mr Solution",
+        "url": "https://mrsolution.com",
+        "logo": "https://mrsolution.com/logo.png",
+        "sameAs": [
+          "https://x.com/mrsolution",
+          "https://linkedin.com/company/mrsolution"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "contact@mrsolution.com",
+          "contactType": "Customer Support"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mrsolution.com/#home"},
+          {"@type": "ListItem", "position": 2, "name": "About", "item": "https://mrsolution.com/#about"},
+          {"@type": "ListItem", "position": 3, "name": "Services", "item": "https://mrsolution.com/#services"},
+          {"@type": "ListItem", "position": 4, "name": "Testimonials", "item": "https://mrsolution.com/#testimonials"},
+          {"@type": "ListItem", "position": 5, "name": "FAQ", "item": "https://mrsolution.com/#faq"},
+          {"@type": "ListItem", "position": 6, "name": "Contact", "item": "https://mrsolution.com/#contact"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What services does Mr Solution offer?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Mr Solution provides AI-powered analytics, cloud infrastructure, cybersecurity, custom development, business intelligence, and digital transformation services tailored to your business needs."}
+          },
+          {
+            "@type": "Question",
+            "name": "How can I get started with a free trial?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Contact us via the form in the footer or click 'Start Free Trial' in the CTA section, and our team will guide you through the process."}
+          },
+          {
+            "@type": "Question",
+            "name": "Is my data secure with your solutions?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Our cybersecurity suite uses advanced threat detection and encryption to ensure your data is protected at all times."}
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer support for custom projects?",
+            "acceptedAnswer": {"@type": "Answer", "text": "Yes, our custom development team specializes in building bespoke solutions tailored to your unique requirements."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator" id="scrollIndicator"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo" data-i18n="nav.logo">Mr Solution</div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+        <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+        <li><a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonials</a></li>
+        <li><a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="#premium" class="cta-button" data-i18n="nav.premium">Get Premium</a></li>
+      </ul>
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+        <div class="hamburger"></div>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+      <select id="languageSwitcher" class="language-switcher" aria-label="Select language">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-background"></div>
+    <div class="floating-elements">
+      <div class="floating-element" style="width: 100px; height: 100px; left: 10%; animation-delay: 0s;" data-parallax-speed="0.3"></div>
+      <div class="floating-element" style="width: 150px; height: 150px; left: 70%; animation-delay: -5s;" data-parallax-speed="0.5"></div>
+      <div class="floating-element" style="width: 80px; height: 80px; left: 40%; animation-delay: -10s;" data-parallax-speed="0.2"></div>
+      <div class="floating-element" style="width: 120px; height: 120px; left: 85%; animation-delay: -15s;" data-parallax-speed="0.4"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title" id="heroTitle" data-i18n="hero.title">Revolutionary Tech Solutions</h1>
+      <p class="hero-subtitle" id="heroSubtitle" data-i18n="hero.subtitle">Empowering businesses with AI-driven innovation and cutting-edge technology that transforms possibilities into reality</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn-primary" data-i18n="hero.explore">Explore Solutions</a>
+        <a href="#contact" class="btn-secondary" data-i18n="hero.start">Start Your Journey</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats" id="about">
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number" data-count="10000">0</div>
+        <div class="stat-label" data-i18n="stats.clients">Satisfied Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="500">0</div>
+        <div class="stat-label" data-i18n="stats.projects">Projects Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="99">0</div>
+        <div class="stat-label" data-i18n="stats.success">Success Rate %</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="24">0</div>
+        <div class="stat-label" data-i18n="stats.support">24/7 Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="services-container">
+      <h2 class="section-title" data-i18n="services.title">Our Premium Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚀</div>
+          <h3 class="service-title" data-i18n="services.ai.title">AI-Powered Analytics</h3>
+          <p class="service-description" data-i18n="services.ai.description">Transform raw data into actionable insights with our advanced machine learning algorithms and predictive analytics platform.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3 class="service-title" data-i18n="services.cloud.title">Cloud Infrastructure</h3>
+          <p class="service-description" data-i18n="services.cloud.description">Experience unparalleled scalability and reliability with our cloud infrastructure solutions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3 class="service-title" data-i18n="services.cybersecurity.title">Cybersecurity Suite</h3>
+          <p class="service-description" data-i18n="services.cybersecurity.description">Protect your digital assets with our comprehensive cybersecurity suite.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3 class="service-title" data-i18n="services.custom.title">Custom Development</h3>
+          <p class="service-description" data-i18n="services.custom.description">Our custom development services deliver bespoke software solutions tailored to your unique requirements.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3 class="service-title" data-i18n="services.bi.title">Business Intelligence</h3>
+          <p class="service-description" data-i18n="services.bi.description">Unlock the power of your data with our business intelligence tools.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3 class="service-title" data-i18n="services.digital.title">Digital Transformation</h3>
+          <p class="service-description" data-i18n="services.digital.description">Accelerate your business with our digital transformation services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-container">
+      <h2 class="section-title" data-i18n="testimonials.title">What Industry Leaders Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonials.t1.text">"Mr Solution transformed our entire tech infrastructure. Their AI solutions increased our efficiency by 40% and revolutionized how we approach data analytics."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SJ</div>
+            <div class="author-info">
+              <h4 data-i18n="testimonials.t1.author">Sarah Johnson</h4>
+              <p data-i18n="testimonials.t1.role">CEO, TechNova Inc.</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonials.t2.text">"The premium support and custom development services exceeded all expectations. Their team delivered solutions that perfectly aligned with our vision."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MC</div>
+            <div class="author-info">
+              <h4 data-i18n="testimonials.t2.author">Michael Chen</h4>
+              <p data-i18n="testimonials.t2.role">CTO, InnovateX</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text" data-i18n="testimonials.t3.text">"Outstanding cybersecurity implementation. We've had zero security incidents since partnering with Mr Solution. Their proactive approach is unmatched."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ER</div>
+            <div class="author-info">
+              <h4 data-i18n="testimonials.t3.author">Emily Rodriguez</h4>
+              <p data-i18n="testimonials.t3.role">CISO, SecureCore</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq" id="faq">
+    <div class="faq-container">
+      <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" data-i18n="faq.q1">
+            <span class="faq-text">What services does Mr Solution offer?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq.a1">Mr Solution provides AI-powered analytics, cloud infrastructure, cybersecurity, custom development, business intelligence, and digital transformation services tailored to your business needs.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" data-i18n="faq.q2">
+            <span class="faq-text">How can I get started with a free trial?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq.a2">Contact us via the form in the footer or click "Start Free Trial" in the CTA section, and our team will guide you through the process.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" data-i18n="faq.q3">
+            <span class="faq-text">Is my data secure with your solutions?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq.a3">Absolutely. Our cybersecurity suite uses advanced threat detection and encryption to ensure your data is protected at all times.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" data-i18n="faq.q4">
+            <span class="faq-text">Do you offer support for custom projects?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-i18n="faq.a4">Yes, our custom development team specializes in building bespoke solutions tailored to your unique requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="premium">
+    <div class="cta-content">
+      <h2 class="cta-title" data-i18n="cta.title">Ready to Transform Your Business?</h2>
+      <p class="cta-description" data-i18n="cta.description">Join thousands of companies already leveraging our premium solutions to stay ahead in the digital revolution. Get started with our exclusive premium plan today.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary" data-i18n="cta.button">Start Free Trial</a>
+        <a href="#services" class="btn-secondary" data-i18n="cta.view">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 data-i18n="footer.about.title">Mr Solution</h3>
+        <p data-i18n="footer.about.description">Leading the future of technology with innovative solutions that empower businesses to achieve unprecedented growth and efficiency.</p>
+      </div>
+      <div class="footer-section">
+        <h3 data-i18n="footer.services.title">Services</h3>
+        <p><a href="#services" data-i18n="services.ai.title">AI-Powered Analytics</a></p>
+        <p><a href="#services" data-i18n="services.cloud.title">Cloud Infrastructure</a></p>
+        <p><a href="#services" data-i18n="services.cybersecurity.title">Cybersecurity</a></p>
+        <p><a href="#services" data-i18n="services.custom.title">Custom Development</a></p>
+      </div>
+      <div class="footer-section">
+        <h3 data-i18n="footer.links.title">Quick Links</h3>
+        <p><a href="#home" data-i18n="nav.home">Home</a></p>
+        <p><a href="#about" data-i18n="nav.about">About</a></p>
+        <p><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></p>
+        <p><a href="#premium" data-i18n="nav.premium">Get Premium</a></p>
+      </div>
+      <div class="footer-section">
+        <h3 data-i18n="footer.contact.title">Contact</h3>
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name" data-i18n="form.label.name">Your Name</label>
+            <input type="text" id="name" data-i18n-placeholder="form.name" placeholder="Your Name" required aria-label="Your Name">
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="form.label.email">Your Email</label>
+            <input type="email" id="email" data-i18n-placeholder="form.email" placeholder="Your Email" required aria-label="Your Email">
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="form.label.message">Your Message</label>
+            <textarea id="message" data-i18n-placeholder="form.message" placeholder="Your Message" required aria-label="Your Message"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" data-i18n="form.submit">Send Message</button>
+          <p class="form-message" id="formMessage"></p>
+        </form>
+      </div>
+      <div class="footer-section">
+        <h3 data-i18n="footer.newsletter.title">Newsletter</h3>
+        <p data-i18n="footer.newsletter.description">Stay updated with the latest tech insights and offers!</p>
+        <form id="newsletterForm" class="newsletter-form">
+          <div class="form-group">
+            <label for="newsletterEmail" data-i18n="form.label.email">Your Email</label>
+            <input type="email" id="newsletterEmail" data-i18n-placeholder="form.email" placeholder="Your Email" required aria-label="Newsletter Email">
+          </div>
+          <button type="submit" class="btn-primary" data-i18n="newsletter.submit">Subscribe</button>
+          <p class="form-message" id="newsletterMessage"></p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">© 2025 Mr Solution. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- Modal for Service Cards -->
+  <div class="modal" id="serviceModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content">
+      <span class="modal-close" id="modalClose" role="button" aria-label="Close modal">×</span>
+      <div class="modal-icon" id="modalIcon"></div>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-description" id="modalDescription"></p>
+      <a href="#contact" class="btn-primary modal-cta" data-i18n="modal.cta">Get Started</a>
+    </div>
+  </div>
+
+  <!-- Live Chat Widget -->
+  <div class="chat-widget" id="chatWidget">
+    <button class="chat-button" id="chatButton" aria-label="Open live chat">💬</button>
+    <div class="chat-box" id="chatBox" role="dialog" aria-labelledby="chatHeader" aria-hidden="true">
+      <div class="chat-header">
+        <h4 id="chatHeader" data-i18n="chat.title">Live Support</h4>
+        <button class="chat-close" id="chatClose" aria-label="Close chat">×</button>
+      </div>
+      <div class="chat-messages">
+        <p data-i18n="chat.welcome">Welcome! How can we assist you today?</p>
+      </div>
+      <form id="chatForm" class="chat-form">
+        <input type="text" id="chatInput" data-i18n-placeholder="chat.input" placeholder="Type your message..." required aria-label="Chat message">
+        <button type="submit" class="btn-primary" data-i18n="chat.submit">Send</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
